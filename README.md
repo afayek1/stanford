@@ -7,4 +7,5 @@ I will be using this repository to post my solutions to these courses. This is o
 ##Courses
 
 ###CS106A - Programming Methodology
+####Projects: Breakout, Hangman, Yahtzee!
 ###CS106B - Programming Abstractions

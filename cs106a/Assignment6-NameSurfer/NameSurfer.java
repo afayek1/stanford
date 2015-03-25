@@ -17,18 +17,22 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
  * and initializing the interactors at the bottom of the window.
  */
 	public void init() {
-	    nameField = new JTextField(10);
-	    graphButton = new JButton("Graph");
-	    clearButton = new JButton("Clear");
-	    
-	    add(new JLabel("Name: "), SOUTH);
-	    add(nameField, SOUTH);
-	    add(graphButton, SOUTH);
-	    add(clearButton, SOUTH);
-	    
-	    nameField.addActionListener(this);
-	    graphButton.addActionListener(this);
-	    clearButton.addActionListener(this);
+	    setUp();
+	}
+	
+	private void setUp() {
+        nameField = new JTextField(10);
+        graphButton = new JButton("Graph");
+        clearButton = new JButton("Clear");
+        
+        add(new JLabel("Name: "), SOUTH);
+        add(nameField, SOUTH);
+        add(graphButton, SOUTH);
+        add(clearButton, SOUTH);
+        
+        nameField.addActionListener(this);
+        graphButton.addActionListener(this);
+        clearButton.addActionListener(this);	    
 	}
 
 /* Method: actionPerformed(e) */

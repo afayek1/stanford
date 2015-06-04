@@ -16,21 +16,21 @@
 #include "vector.h"
 using namespace std;
 
+void printIntroduction();
 string getStartWord();
 string getDestinationWord();
-bool checkVisited(string word);
 void printLadder(vector<string> ladder);
-void printIntroduction();
+
+queue<vector<string> > toVisit;
+vector<string> ladder;
+set<string> visited;
+string start, destination;
 
 int main() {
-    queue<vector<string> > toVisit;
-    vector<string> ladder;
     Lexicon english("EnglishWords.dat");
-    set<string> visited;
-
     printIntroduction();
-    string start = getStartWord();
-    string destination = getDestinationWord();
+    start = getStartWord();
+    destination = getDestinationWord();
 
     visited.insert(start);
     ladder.push_back(start);
@@ -57,10 +57,13 @@ int main() {
                 }
             }
         }
-
     }
     cout << "NO LADDER" << endl;
 	return 0;
+}
+
+void printIntroduction() {
+    cout << "Welcome to word ladder. Your start and destination words must be the same length. RETURN to quit." << endl;
 }
 
 string getStartWord() {
@@ -69,10 +72,6 @@ string getStartWord() {
 
 string getDestinationWord() {
     return getLine("Please enter destination word: ");
-}
-
-void printIntroduction() {
-    cout << "Welcome to word ladder. Your start and destination words must be the same length. RETURN to quit." << endl;
 }
 
 void printLadder(vector<string> ladder) {
